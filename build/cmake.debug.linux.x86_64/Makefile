@@ -117,24 +117,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named task1
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+task1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task1
+.PHONY : task1
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+task1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/build
+.PHONY : task1/fast
+
+#=============================================================================
+# Target rules for targets named task2
+
+# Build rule for target.
+task2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task2
+.PHONY : task2
+
+# fast build rule for target.
+task2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/build
+.PHONY : task2/fast
 
 MurmurHash3.o: MurmurHash3.cpp.o
 .PHONY : MurmurHash3.o
 
 # target to build an object file
 MurmurHash3.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MurmurHash3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/MurmurHash3.cpp.o
 .PHONY : MurmurHash3.cpp.o
 
 MurmurHash3.i: MurmurHash3.cpp.i
@@ -142,7 +155,7 @@ MurmurHash3.i: MurmurHash3.cpp.i
 
 # target to preprocess a source file
 MurmurHash3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MurmurHash3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/MurmurHash3.cpp.i
 .PHONY : MurmurHash3.cpp.i
 
 MurmurHash3.s: MurmurHash3.cpp.s
@@ -150,32 +163,56 @@ MurmurHash3.s: MurmurHash3.cpp.s
 
 # target to generate assembly for a file
 MurmurHash3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MurmurHash3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/MurmurHash3.cpp.s
 .PHONY : MurmurHash3.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+task1.o: task1.cpp.o
+.PHONY : task1.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
+task1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/task1.cpp.o
+.PHONY : task1.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+task1.i: task1.cpp.i
+.PHONY : task1.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+task1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/task1.cpp.i
+.PHONY : task1.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+task1.s: task1.cpp.s
+.PHONY : task1.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+task1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/task1.cpp.s
+.PHONY : task1.cpp.s
+
+task2.o: task2.cpp.o
+.PHONY : task2.o
+
+# target to build an object file
+task2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/task2.cpp.o
+.PHONY : task2.cpp.o
+
+task2.i: task2.cpp.i
+.PHONY : task2.i
+
+# target to preprocess a source file
+task2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/task2.cpp.i
+.PHONY : task2.cpp.i
+
+task2.s: task2.cpp.s
+.PHONY : task2.s
+
+# target to generate assembly for a file
+task2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/task2.cpp.s
+.PHONY : task2.cpp.s
 
 # Help Target
 help:
@@ -185,13 +222,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... task1"
+	@echo "... task2"
 	@echo "... MurmurHash3.o"
 	@echo "... MurmurHash3.i"
 	@echo "... MurmurHash3.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... task1.o"
+	@echo "... task1.i"
+	@echo "... task1.s"
+	@echo "... task2.o"
+	@echo "... task2.i"
+	@echo "... task2.s"
 .PHONY : help
 
 

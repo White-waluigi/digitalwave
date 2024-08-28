@@ -94,21 +94,37 @@ std::shared_ptr<HashTable> createHashTable(size_t size) {
 	return table;
 }
 
+//mode enum
+enum Mode {
+	INSERT, GET, REMOVE
+};
 
 // common function to find an elment in the tree
-size_t find_idx(std::shared_ptr<HashTable> table, std::string word, bool skip_deleted,uint32_t &hash) {
+long find_idx(std::shared_ptr<HashTable> table, std::string word, Mode mode,uint32_t &hash) {
 
 	MurmurHash3_x86_32(word.c_str(), word.size(), 0, &hash);
 	int start = hash % table->maxSize;
 	int index = start;
 
 	while (table->data[index].has_value() ){
-		if (table->data[index].value()->word == word) {
-			if (!skip_deleted || !table->data[index].value()->deleted) {
+		std::shared_ptr<Tuple> tuple = table->data[index].value();
+
+
+		// overwrite exiting or deleted
+		if (mode==INSERT&&
+				(table->data[index].value()->word == word ||tuple->deleted)) {
 				return index;
-			}
 		}
+		if (mode == GET && tuple->word == word&&!tuple->deleted) {
+			return index;
+		}
+		if (mode == REMOVE && tuple->word == word
+				&& !tuple->deleted) {
+			return index;
+		}
+
 		index++;
+
 		if (index >= table->maxSize) {
 			index = 0;
 		}
@@ -123,14 +139,14 @@ size_t find_idx(std::shared_ptr<HashTable> table, std::string word, bool skip_de
 std::optional<std::shared_ptr<Tuple>> insert(std::shared_ptr<HashTable> table, std::string word, int value) {
 	std::shared_ptr<Tuple> tuple = std::make_shared<Tuple>();
 
+
 	tuple->word = word;
 	tuple->value = value;
 	tuple->deleted = false;
 
 	uint32_t hash;
 
-	bool was_deleted = false;
-	size_t index = find_idx(table, word, false,hash);
+	long index = find_idx(table, word, INSERT,hash);
 
 	if (index == -1) {
 		return std::nullopt;
@@ -179,7 +195,7 @@ std::optional<std::shared_ptr<Tuple>> get_last(std::shared_ptr<HashTable> table)
 
 std::optional<int> get(std::shared_ptr<HashTable> table, std::string word) {
 	uint32_t hash;
-	size_t index = find_idx(table, word, true,hash);
+	long index = find_idx(table, word, GET,hash);
 	if (index == -1) {
 		return std::nullopt;
 	}
@@ -188,7 +204,7 @@ std::optional<int> get(std::shared_ptr<HashTable> table, std::string word) {
 
 std::optional<std::shared_ptr<Tuple>> remove(std::shared_ptr<HashTable> table, std::string word) {
 	uint32_t hash;
-	size_t index = find_idx(table, word, true,hash);
+	long index = find_idx(table, word, REMOVE,hash);
 	if (index == -1) {
 		return std::nullopt;
 	}
@@ -216,7 +232,6 @@ int main()
 	// insert all unique words into the hash table
 	
 	for (size_t i = 0; i < uniqueWords.size(); i++) {
-		std::cout << "Inserting word: " << uniqueWords[i] << std::endl;
 		insert(table, uniqueWords[i], i);
 	}
 	for (size_t i = 0; i < table->maxSize; i++) {
@@ -263,23 +278,52 @@ int main()
 	std::cout << "Last word after removing 'newsletter': " << last.value()->word << std::endl;
 
 
-	// get the value of the word "the"
+	// get the value of the word "The"
 	
 	std::optional<int> the = get(table, "empties");
 
 
 	std::cout << "Value of the word 'empties': " << the.value() << std::endl;
 
-	// reinsering "the"
-	std::optional<std::shared_ptr<Tuple>> reinserted = insert(table, "the", 99);
+
+
+
+	// reinsering "The"
+	std::optional<std::shared_ptr<Tuple>> reinserted = insert(table, "The", 99);
 	if (reinserted.has_value() && reinserted.value()->word == "the" && reinserted.value()->value == 99){
 		std::cout << "Reinserting 'the' succeeded" << std::endl;
 	}
 
+	insert(table, "newsletter", 99);
 
-	// remove the word "the"
-	
-	std::optional<std::shared_ptr<Tuple>> removed = remove(table, "the");
+	//check for empty slots
+	for (size_t i = 0; i < table->maxSize; i++) {
+		if (!table->data[i].has_value()) {
+			std::cout << "Empty entry: " << i << std::endl;
+		}
+		if (table->data[i].has_value() && table->data[i].value()->deleted) {
+			std::cout << "Deleted entry: " << i << std::endl;
+		}
+	}
+
+
+
+	// remove the word "is"
+	std::optional<std::shared_ptr<Tuple>> removedIs = remove(table, "is");
+	// now we should be able to insert "*random"
+	inserted = insert(table, "*random", 0);
+	if (inserted.has_value()) {
+		std::cout << "Inserting 'random' succeeded" << std::endl;
+	}
+
+	//now insert "is" again should fail
+	inserted = insert(table, "is", -1);
+	if (!inserted.has_value()) {
+		std::cout << "Inserting 'is' failed successfully" << std::endl;
+	}
+
+
+
 	return 0;
 }
 

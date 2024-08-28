@@ -1,14 +1,20 @@
 [
 {
   "directory": "/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64",
-  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/main.dir/main.cpp.o -c /home/marvin/trash/cpp/test/main.cpp",
-  "file": "/home/marvin/trash/cpp/test/main.cpp",
-  "output": "CMakeFiles/main.dir/main.cpp.o"
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/task1.dir/task1.cpp.o -c /home/marvin/trash/cpp/test/task1.cpp",
+  "file": "/home/marvin/trash/cpp/test/task1.cpp",
+  "output": "CMakeFiles/task1.dir/task1.cpp.o"
 },
 {
   "directory": "/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64",
-  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/main.dir/MurmurHash3.cpp.o -c /home/marvin/trash/cpp/test/MurmurHash3.cpp",
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/task1.dir/MurmurHash3.cpp.o -c /home/marvin/trash/cpp/test/MurmurHash3.cpp",
   "file": "/home/marvin/trash/cpp/test/MurmurHash3.cpp",
-  "output": "CMakeFiles/main.dir/MurmurHash3.cpp.o"
+  "output": "CMakeFiles/task1.dir/MurmurHash3.cpp.o"
+},
+{
+  "directory": "/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/task2.dir/task2.cpp.o -c /home/marvin/trash/cpp/test/task2.cpp",
+  "file": "/home/marvin/trash/cpp/test/task2.cpp",
+  "output": "CMakeFiles/task2.dir/task2.cpp.o"
 }
 ]

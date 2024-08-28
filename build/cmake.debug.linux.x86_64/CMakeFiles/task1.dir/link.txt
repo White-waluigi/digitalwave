@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -O0 CMakeFiles/task1.dir/task1.cpp.o CMakeFiles/task1.dir/MurmurHash3.cpp.o -o task1  /usr/lib/libcurl.so
