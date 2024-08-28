@@ -18,3 +18,8 @@ For the the Hashtable I used a simple strategy:
     - std::chrono::high_resolution_clock is used to measure parser performance, averaging 200ns, which is quite good
     - C++s built in and highly optimized regex parsers are used to process the data. A JSON library would have been a good choice too, but since the data is always in the same format, it may have been slower
     - The complexity is pretty low, since the data is always in the same format and the regex is simple
+
+
+please visit my Website at [https://marvinwyss.ch](https://marvinwyss.ch) to see all my projects
+```
+
