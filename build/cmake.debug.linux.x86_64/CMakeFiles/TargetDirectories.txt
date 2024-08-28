@@ -1,0 +1,3 @@
+/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64/CMakeFiles/main.dir
+/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64/CMakeFiles/edit_cache.dir
+/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64/CMakeFiles/rebuild_cache.dir

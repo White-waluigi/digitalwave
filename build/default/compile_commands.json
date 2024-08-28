@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/marvin/trash/cpp/test/build/default",
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/task1.dir/task1.cpp.o -c /home/marvin/trash/cpp/test/task1.cpp",
+  "file": "/home/marvin/trash/cpp/test/task1.cpp",
+  "output": "CMakeFiles/task1.dir/task1.cpp.o"
+},
+{
+  "directory": "/home/marvin/trash/cpp/test/build/default",
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/task1.dir/MurmurHash3.cpp.o -c /home/marvin/trash/cpp/test/MurmurHash3.cpp",
+  "file": "/home/marvin/trash/cpp/test/MurmurHash3.cpp",
+  "output": "CMakeFiles/task1.dir/MurmurHash3.cpp.o"
+},
+{
+  "directory": "/home/marvin/trash/cpp/test/build/default",
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/task2.dir/task2.cpp.o -c /home/marvin/trash/cpp/test/task2.cpp",
+  "file": "/home/marvin/trash/cpp/test/task2.cpp",
+  "output": "CMakeFiles/task2.dir/task2.cpp.o"
+}
+]

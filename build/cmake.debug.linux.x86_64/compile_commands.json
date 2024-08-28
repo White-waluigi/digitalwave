@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/main.dir/main.cpp.o -c /home/marvin/trash/cpp/test/main.cpp",
+  "file": "/home/marvin/trash/cpp/test/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+},
+{
+  "directory": "/home/marvin/trash/cpp/test/build/cmake.debug.linux.x86_64",
+  "command": "/usr/bin/c++   -g -O0 -Wall -Wextra -pedantic -g -o CMakeFiles/main.dir/MurmurHash3.cpp.o -c /home/marvin/trash/cpp/test/MurmurHash3.cpp",
+  "file": "/home/marvin/trash/cpp/test/MurmurHash3.cpp",
+  "output": "CMakeFiles/main.dir/MurmurHash3.cpp.o"
+}
+]

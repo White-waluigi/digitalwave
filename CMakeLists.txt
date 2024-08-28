@@ -10,14 +10,27 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIR})
 
-target_compile_options(main PRIVATE -Wall -Wextra -pedantic -g)
 # list of source files
 set(SOURCE_FILES
-	main.cpp
+	task1.cpp
 	MurmurHash3.cpp
 )
 
 # Add murmur hash cpp
-add_executable(main ${SOURCE_FILES})
+add_executable(task1 ${SOURCE_FILES})
 
-target_link_libraries(main ${CURL_LIBRARIES})
+target_link_libraries(task1 ${CURL_LIBRARIES})
+target_compile_options(task1 PRIVATE -Wall -Wextra -pedantic -g)
+
+
+
+# list of source files
+set(SOURCE_FILES
+	task2.cpp
+)
+
+# Add murmur hash cpp
+add_executable(task2 ${SOURCE_FILES})
+
+target_link_libraries(task2 ${CURL_LIBRARIES})
+target_compile_options(task2 PRIVATE -Wall -Wextra -pedantic -g)

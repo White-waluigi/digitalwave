@@ -1,0 +1,4 @@
+/home/marvin/trash/cpp/test/build/default/CMakeFiles/task1.dir
+/home/marvin/trash/cpp/test/build/default/CMakeFiles/task2.dir
+/home/marvin/trash/cpp/test/build/default/CMakeFiles/edit_cache.dir
+/home/marvin/trash/cpp/test/build/default/CMakeFiles/rebuild_cache.dir
