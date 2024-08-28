@@ -1,6 +1,5 @@
-CMakeFiles/myexample.dir/main.cpp.o: \
- /home/marvin/trash/digitalwave/main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/14.2.1/iostream \
+CMakeFiles/main.dir/main.cpp.o: /home/marvin/trash/digitalwave/main.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -137,4 +136,74 @@ CMakeFiles/myexample.dir/main.cpp.o: \
  /usr/include/c++/14.2.1/bits/locale_facets.tcc \
  /usr/include/c++/14.2.1/bits/basic_ios.tcc \
  /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
- /usr/include/c++/14.2.1/bits/istream.tcc
+ /usr/include/c++/14.2.1/bits/istream.tcc /usr/include/curl/curl.h \
+ /usr/include/curl/curlver.h /usr/include/curl/system.h \
+ /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
+ /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
+ /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/types/struct_osockaddr.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/sys/time.h \
+ /usr/include/curl/easy.h /usr/include/curl/multi.h \
+ /usr/include/curl/curl.h /usr/include/curl/urlapi.h \
+ /usr/include/curl/options.h /usr/include/curl/header.h \
+ /usr/include/curl/websockets.h /usr/include/curl/mprintf.h \
+ /usr/include/c++/14.2.1/vector \
+ /usr/include/c++/14.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/14.2.1/bits/stl_vector.h \
+ /usr/include/c++/14.2.1/bits/stl_bvector.h \
+ /usr/include/c++/14.2.1/bits/vector.tcc /usr/include/c++/14.2.1/regex \
+ /usr/include/c++/14.2.1/bitset /usr/include/c++/14.2.1/locale \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.2.1/ctime \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/14.2.1/bits/codecvt.h \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.2.1/bits/locale_conv.h \
+ /usr/include/c++/14.2.1/sstream /usr/include/c++/14.2.1/bits/sstream.tcc \
+ /usr/include/c++/14.2.1/stack /usr/include/c++/14.2.1/deque \
+ /usr/include/c++/14.2.1/bits/stl_deque.h \
+ /usr/include/c++/14.2.1/bits/deque.tcc \
+ /usr/include/c++/14.2.1/bits/stl_stack.h \
+ /usr/include/c++/14.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/14.2.1/bits/shared_ptr.h \
+ /usr/include/c++/14.2.1/bits/shared_ptr_base.h \
+ /usr/include/c++/14.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/14.2.1/bits/unique_ptr.h \
+ /usr/include/c++/14.2.1/ext/concurrence.h \
+ /usr/include/c++/14.2.1/bits/std_function.h \
+ /usr/include/c++/14.2.1/bits/stl_algo.h \
+ /usr/include/c++/14.2.1/bits/algorithmfwd.h \
+ /usr/include/c++/14.2.1/bits/stl_heap.h \
+ /usr/include/c++/14.2.1/bits/uniform_int_dist.h \
+ /usr/include/c++/14.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/14.2.1/bits/stl_tree.h \
+ /usr/include/c++/14.2.1/bits/node_handle.h \
+ /usr/include/c++/14.2.1/bits/stl_map.h \
+ /usr/include/c++/14.2.1/bits/regex_constants.h \
+ /usr/include/c++/14.2.1/bits/regex_error.h \
+ /usr/include/c++/14.2.1/bits/regex_automaton.h \
+ /usr/include/c++/14.2.1/bits/regex_automaton.tcc \
+ /usr/include/c++/14.2.1/bits/regex_scanner.h \
+ /usr/include/c++/14.2.1/bits/regex_scanner.tcc \
+ /usr/include/c++/14.2.1/bits/regex_compiler.h \
+ /usr/include/c++/14.2.1/bits/regex_compiler.tcc \
+ /usr/include/c++/14.2.1/bits/regex.h \
+ /usr/include/c++/14.2.1/bits/regex.tcc \
+ /usr/include/c++/14.2.1/bits/regex_executor.h \
+ /usr/include/c++/14.2.1/bits/regex_executor.tcc \
+ /home/marvin/trash/digitalwave/MurmurHash3.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h /usr/include/c++/14.2.1/optional \
+ /usr/include/c++/14.2.1/bits/enable_special_members.h

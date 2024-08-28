@@ -117,24 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myexample
+# Target rules for targets named main
 
 # Build rule for target.
-myexample: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myexample
-.PHONY : myexample
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-myexample/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/build
-.PHONY : myexample/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+MurmurHash3.o: MurmurHash3.cpp.o
+.PHONY : MurmurHash3.o
+
+# target to build an object file
+MurmurHash3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MurmurHash3.cpp.o
+.PHONY : MurmurHash3.cpp.o
+
+MurmurHash3.i: MurmurHash3.cpp.i
+.PHONY : MurmurHash3.i
+
+# target to preprocess a source file
+MurmurHash3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MurmurHash3.cpp.i
+.PHONY : MurmurHash3.cpp.i
+
+MurmurHash3.s: MurmurHash3.cpp.s
+.PHONY : MurmurHash3.s
+
+# target to generate assembly for a file
+MurmurHash3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MurmurHash3.cpp.s
+.PHONY : MurmurHash3.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +166,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +174,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -161,7 +185,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... myexample"
+	@echo "... main"
+	@echo "... MurmurHash3.o"
+	@echo "... MurmurHash3.i"
+	@echo "... MurmurHash3.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
