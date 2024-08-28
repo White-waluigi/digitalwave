@@ -89,9 +89,7 @@ std::shared_ptr<HashTable> createHashTable(size_t size) {
 	table->maxSize = size;
 	table->data = new std::optional<std::shared_ptr<Tuple>>[size];
 	for (int i = 0; i < size; i++) {
-		std::cout << "Creating table entry: " << i << std::endl;
 		table->data[i] = std::nullopt;
-		std::cout << "Created table entry: " << i << std::endl;
 	}
 	return table;
 }
@@ -165,6 +163,7 @@ std::optional<std::shared_ptr<Tuple>> get_first(std::shared_ptr<HashTable> table
 			return tuple;
 		}
 	}
+	return std::nullopt;
 }
 
 
@@ -174,6 +173,7 @@ std::optional<std::shared_ptr<Tuple>> get_last(std::shared_ptr<HashTable> table)
 			return table->history[i];
 		}
 	}
+	return std::nullopt;
 }
 
 
@@ -216,8 +216,34 @@ int main()
 	// insert all unique words into the hash table
 	
 	for (size_t i = 0; i < uniqueWords.size(); i++) {
+		std::cout << "Inserting word: " << uniqueWords[i] << std::endl;
 		insert(table, uniqueWords[i], i);
 	}
+	for (size_t i = 0; i < table->maxSize; i++) {
+		//should remain no empty entries
+		if (!table->data[i].has_value()) {
+			std::cout << "Empty entry: " << i << std::endl;
+		}
+		//none should be marked as deleted
+		if (table->data[i].has_value() && table->data[i].value()->deleted) {
+			std::cout << "Deleted entry: " << i << std::endl;
+		}
+	}
+	// inserting random word should yield null
+	std::optional<std::shared_ptr<Tuple>> inserted = insert(table, "*random", 0);
+	if (!inserted.has_value()) {
+		std::cout << "Inserting 'random' failed successfully" << std::endl;
+	}
+	// check if all are retrieved
+	for (size_t i = 0; i < uniqueWords.size(); i++) {
+		std::optional<int> value = get(table, uniqueWords[i]);
+		if (!value.has_value() || value.value() != i) {
+			std::cout << "Retrieving word failed: " << uniqueWords[i]
+					<< std::endl;
+		}
+
+	}
+
 
 	// get the first and last element of the hash table
 	std::optional<std::shared_ptr<Tuple>> first = get_first(table);
@@ -226,13 +252,29 @@ int main()
 
 	std::cout << "First word: " << first.value()->word << std::endl;
 	std::cout << "Last word: " << last.value()->word << std::endl;
+	// deleteing "the" to test remove
+	remove(table, "The");
+	first = get_first(table);
+	std::cout << "First word after removing 'The': " << first.value()->word << std::endl;
+
+	// deleteing "newsletter" to test remove
+	remove(table, "newsletter");
+	last = get_last(table);
+	std::cout << "Last word after removing 'newsletter': " << last.value()->word << std::endl;
+
 
 	// get the value of the word "the"
 	
-	std::optional<int> the = get(table, "the");
+	std::optional<int> the = get(table, "empties");
 
 
-	std::cout << "Value of the word 'the': " << the.value() << std::endl;
+	std::cout << "Value of the word 'empties': " << the.value() << std::endl;
+
+	// reinsering "the"
+	std::optional<std::shared_ptr<Tuple>> reinserted = insert(table, "the", 99);
+	if (reinserted.has_value() && reinserted.value()->word == "the" && reinserted.value()->value == 99){
+		std::cout << "Reinserting 'the' succeeded" << std::endl;
+	}
 
 
 	// remove the word "the"

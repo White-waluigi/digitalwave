@@ -1,13 +1,3 @@
-the project may be built like this
-
-```bash
-mkdir build
-cd build
-cmake ..
-make -j
-```
-
-
 # Task 1
 
 In Task 1 I used a regular expression to create a list of words, simply finding all alphanonnumeric sequences of characters.
