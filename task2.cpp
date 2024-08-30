@@ -124,13 +124,13 @@ int main() {
 	    std::cout << "Function took " << duration.count() << " seconds to execute." << std::endl;
 
 
-	    /*
+
 		for (TradeData tradeData : vec) {
 			std::cout << "[" << std::endl;
 			printTrade(tradeData);
 			std::cout << "]" << std::endl;
 		}
-		*/
+
 	}
 
 }
